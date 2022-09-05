@@ -42,8 +42,8 @@ const Main = () => {
             </article>
 
             <article>
-                <Buttons add= {add} btnName='Einzahlen'/>
-                <Buttons add= {sub} btnName='Auszahlen'/>
+                <Buttons func={add} btnName='Einzahlen'/>
+                <Buttons func={sub} btnName='Auszahlen'/>
             </article>
 
         </>
