@@ -3,15 +3,13 @@ import Buttons from './Buttons'
 
 const Main = () => {
 
-    
-
     const [geldBetrag , setGelbetrag] = useState(345)
 
     const add = () => {
         const betragInput = Number (document.getElementsByClassName('geldbetrag')[0].value)
         console.log(betragInput)
         console.log(geldBetrag)
-        setGelbetrag(geldBetrag + betragInput)
+        setGelbetrag((prev) => prev + betragInput)
     }
 
     const sub = () => {
@@ -23,7 +21,7 @@ const Main = () => {
         else{
             console.log(betragInput)
             console.log(geldBetrag)
-            setGelbetrag(geldBetrag - betragInput)
+            setGelbetrag((prev) => prev - betragInput)
         }
     }
 
