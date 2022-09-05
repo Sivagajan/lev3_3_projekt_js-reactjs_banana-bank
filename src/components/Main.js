@@ -4,16 +4,18 @@ import Buttons from './Buttons'
 const Main = () => {
 
     const [geldBetrag , setGelbetrag] = useState(345)
+    const [eingabe, setEingabe] = useState('')
 
     const add = () => {
-        const betragInput = Number (document.getElementsByClassName('geldbetrag')[0].value)
+        const betragInput = Number (eingabe)
         console.log(betragInput)
         console.log(geldBetrag)
+
         setGelbetrag((prev) => prev + betragInput)
     }
 
     const sub = () => {
-        const betragInput = Number (document.getElementsByClassName('geldbetrag')[0].value)
+        const betragInput = Number (eingabe)
 
         if(geldBetrag < betragInput){
             alert('Kontoguthaben reicht nicht aus')
@@ -38,7 +40,7 @@ const Main = () => {
             </article>
             
             <article>
-                <input className="geldbetrag" type={'text'}/>
+                <input className="geldbetrag" type={'number'} onChange={(e) => setEingabe(e.target.value)}/>
             </article>
 
             <article>
